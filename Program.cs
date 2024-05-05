@@ -2,26 +2,34 @@
 {
     public static void Main()
     {
-        Console.WriteLine("Running Program");
         Console.WriteLine("Enter the name of the file you want to search (without the file '.txt' at the end)\n");
         string fileToSearch = Console.ReadLine();
         fileToSearch += ".txt";
-        searchWithinFile(fileToSearch, "gm");
+        
+        Console.WriteLine("Enter what you want to search for:\n");
+        string searchValue = Console.ReadLine();
+        
+        int numberOfOccurrences = searchWithinFile(fileToSearch, searchValue);
+        Console.WriteLine($"The search value \"{searchValue}\" appears {numberOfOccurrences} times in the file {fileToSearch}");
     }
 
-    public static void searchWithinFile(string filename, string searchValue)
+    public static int searchWithinFile(string filename, string searchValue)
     {
         StreamReader bob = new StreamReader(filename);
         int searchValueCount = 0;
-        while (bob.ReadLine() != null)
+        
+        for (string currentLine = bob.ReadLine(); currentLine != null; currentLine = bob.ReadLine())
         {
-            string currentLine = bob.ReadLine();
-            if (currentLine.Contains(searchValue))
+        
+            string lowerLine = currentLine.ToLower();
+            
+            if (lowerLine.Contains(searchValue))
             {
                 searchValueCount += 1;
                 Console.WriteLine(currentLine);
             }
         }
-        Console.WriteLine($"The word {searchValue} appears {searchValueCount} times in the file {filename}");
+
+        return searchValueCount;
     }
 }
