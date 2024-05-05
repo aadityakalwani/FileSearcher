@@ -1,0 +1,14 @@
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/bin/Debug/net8.0/FileSearcher
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/bin/Debug/net8.0/FileSearcher.deps.json
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/bin/Debug/net8.0/FileSearcher.runtimeconfig.json
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/bin/Debug/net8.0/FileSearcher.dll
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/bin/Debug/net8.0/FileSearcher.pdb
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/FileSearcher.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/FileSearcher.AssemblyInfoInputs.cache
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/FileSearcher.AssemblyInfo.cs
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/FileSearcher.csproj.CoreCompileInputs.cache
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/FileSearcher.dll
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/refint/FileSearcher.dll
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/FileSearcher.pdb
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/FileSearcher.genruntimeconfig.cache
+/Users/aadityakalwani/Documents/Coding/C#/FileSearcher/obj/Debug/net8.0/ref/FileSearcher.dll
