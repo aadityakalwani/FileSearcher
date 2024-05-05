@@ -3,22 +3,25 @@
     public static void Main()
     {
         Console.WriteLine("Running Program");
+        Console.WriteLine("Enter the name of the file you want to search (without the file '.txt' at the end)\n");
+        string fileToSearch = Console.ReadLine();
+        fileToSearch += ".txt";
+        searchWithinFile(fileToSearch, "gm");
     }
-    
-    public int GetValidInt(int min, int max)
+
+    public static void searchWithinFile(string filename, string searchValue)
     {
-        if (int.TryParse(Console.ReadLine(), out int validInt))
+        StreamReader bob = new StreamReader(filename);
+        int searchValueCount = 0;
+        while (bob.ReadLine() != null)
         {
-            if (validInt >= min && validInt <= max)
+            string currentLine = bob.ReadLine();
+            if (currentLine.Contains(searchValue))
             {
-                return validInt;
+                searchValueCount += 1;
+                Console.WriteLine(currentLine);
             }
-
-            Console.WriteLine($"No bro enter a number between {min} and {max}");
-            return GetValidInt(min, max);
         }
-
-        Console.WriteLine("Please enter a valid integer");
-        return GetValidInt(min, max);
+        Console.WriteLine($"The word {searchValue} appears {searchValueCount} times in the file {filename}");
     }
 }
