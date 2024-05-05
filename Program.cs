@@ -1,4 +1,8 @@
-﻿internal abstract class Program
+﻿using System;
+using System.IO;
+
+
+class Program
 {
     public static void Main()
     {
@@ -8,32 +12,38 @@
         {
             fileToSearch = "secretFileNobodyCanSee.txt";
         }
-        
+
         else
         {
             fileToSearch += ".txt";
         }
-        
+
         Console.WriteLine("Enter what you want to search for:");
         string searchValue = Console.ReadLine();
-        
-        int numberOfOccurrences = searchWithinFile(fileToSearch, searchValue);
+
+        Console.WriteLine("Enter Y to see the whole message each time its mentioned, or anything else to not:");
+        string seeEachTime = Console.ReadLine();
+
+        int numberOfOccurrences = searchWithinFile(fileToSearch, searchValue, seeEachTime);
         Console.WriteLine($"The search value \"{searchValue}\" appears {numberOfOccurrences} times in the file {fileToSearch}");
     }
 
-    public static int searchWithinFile(string filename, string searchValue)
+    public static int searchWithinFile(string filename, string searchValue, string seeEachTime)
     {
         StreamReader bob = new StreamReader(filename);
         int searchValueCount = 0;
-        
+
         for (string currentLine = bob.ReadLine(); currentLine != null; currentLine = bob.ReadLine())
         {
             string lowerLine = currentLine.ToLower();
-            
+
             if (lowerLine.Contains(searchValue))
             {
                 searchValueCount += 1;
-                Console.WriteLine(currentLine);
+                if (seeEachTime == "Y")
+                {
+                    Console.WriteLine(currentLine);
+                }
             }
         }
 
