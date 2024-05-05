@@ -2,11 +2,19 @@
 {
     public static void Main()
     {
-        Console.WriteLine("Enter the name of the file you want to search (without the file '.txt' at the end)\n");
+        Console.WriteLine("Enter the name of the file you want to search (without the file '.txt' at the end):");
         string fileToSearch = Console.ReadLine();
-        fileToSearch += ".txt";
+        if (fileToSearch == "b")
+        {
+            fileToSearch = "secretFileNobodyCanSee.txt";
+        }
         
-        Console.WriteLine("Enter what you want to search for:\n");
+        else
+        {
+            fileToSearch += ".txt";
+        }
+        
+        Console.WriteLine("Enter what you want to search for:");
         string searchValue = Console.ReadLine();
         
         int numberOfOccurrences = searchWithinFile(fileToSearch, searchValue);
@@ -20,7 +28,6 @@
         
         for (string currentLine = bob.ReadLine(); currentLine != null; currentLine = bob.ReadLine())
         {
-        
             string lowerLine = currentLine.ToLower();
             
             if (lowerLine.Contains(searchValue))
